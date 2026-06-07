@@ -63,10 +63,10 @@ app.use((err, req, res, next) => {
     stack: process.env.NODE_ENV === 'production' ? null : err.stack,
   });
 });
-
 const PORT = process.env.PORT || 6001;
-if (process.env.NODE_ENV !== 'production') {
-  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-}
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 
 module.exports = app;
